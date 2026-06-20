@@ -1,0 +1,33 @@
+.threat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.threat-card {
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 24px;
+  color: white;
+}
+
+.threat-card h3 {
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.threat-card p {
+  font-size: 34px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.threat-low {
+  color: #22c55e !important;
+}
+
+.threat-high {
+  color: #ef4444 !important;
+}

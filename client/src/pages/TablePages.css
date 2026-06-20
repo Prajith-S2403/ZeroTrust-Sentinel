@@ -1,0 +1,928 @@
+/* TablePages.css - Complete Fixed Version */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Admin Layout */
+.admin-page {
+  min-height: 100vh;
+  background: #0a0e1a;
+}
+
+/* Sidebar Header (used in Sidebar.jsx) */
+.sidebar-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+.sidebar-header h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-header p {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* ============================================
+   PAGE CONTAINER
+   ============================================ */
+.page-container {
+  margin-left: 280px;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0e1a 0%, #0f1422 50%, #0a0e1a 100%);
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ============================================
+   PAGE TITLE
+   ============================================ */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00f2fe, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #00f2fe, #4facfe, transparent);
+  border-radius: 3px;
+}
+
+.page-subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   TABLE CARD
+   ============================================ */
+.table-card {
+  background: linear-gradient(135deg, rgba(15, 20, 34, 0.95), rgba(10, 14, 26, 0.98));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 242, 254, 0.1);
+  border: 1px solid rgba(0, 242, 254, 0.15);
+  overflow-x: auto;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.table-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 242, 254, 0.15);
+  border-color: rgba(0, 242, 254, 0.3);
+}
+
+.table-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f3f4f6;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 242, 254, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ============================================
+   DATA TABLE - FIXED LAYOUT
+   ============================================ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.data-table thead {
+  background: linear-gradient(135deg, #0f1422, #0a0e1a);
+  border-bottom: 2px solid rgba(0, 242, 254, 0.3);
+}
+
+.data-table th {
+  color: #00f2fe;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.7rem;
+  border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 0.75rem 1rem;
+  color: #cbd5e1;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.data-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(0, 242, 254, 0.05);
+}
+
+/* Column Widths - Auto adjust */
+.data-table th:first-child,
+.data-table td:first-child {
+  width: 15%;
+}
+
+.data-table th:nth-child(2),
+.data-table td:nth-child(2) {
+  width: 20%;
+}
+
+.data-table th:nth-child(3),
+.data-table td:nth-child(3) {
+  width: 35%;
+}
+
+.data-table th:nth-child(4),
+.data-table td:nth-child(4) {
+  width: 30%;
+}
+
+/* ============================================
+   ACTION BADGES
+   ============================================ */
+.action-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.action-badge.upload {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.action-badge.download {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.action-badge.share {
+  background: rgba(192, 132, 252, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.3);
+}
+
+.action-badge.delete {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.action-badge.unauthorized {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+/* ============================================
+   INVESTIGATION STATS
+   ============================================ */
+.investigation-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, rgba(15, 20, 34, 0.95), rgba(10, 14, 26, 0.98));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 242, 254, 0.15);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: rgba(0, 242, 254, 0.3);
+  transform: translateY(-3px);
+}
+
+.stat-card h4 {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.stat-card p {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #f3f4f6;
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .page-container {
+    margin-left: 280px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .table-card {
+    padding: 1rem;
+  }
+
+  .data-table {
+    min-width: 600px;
+  }
+
+  .investigation-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-card p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .investigation-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 1.25rem;
+  }
+}
+
+
+/* Add to TablePages.css - Forensic Page Styles */
+
+/* Summary Grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.summary-item label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+.summary-item span {
+  font-size: 0.875rem;
+  color: #f3f4f6;
+  font-weight: 500;
+}
+
+/* Recommendation Box */
+.recommendation-box {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+}
+
+.recommendation-box.high-risk {
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  border-left: 4px solid #f87171;
+}
+
+.recommendation-box.medium-risk {
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-left: 4px solid #fbbf24;
+}
+
+.recommendation-box.low-risk {
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-left: 4px solid #34d399;
+}
+
+.recommendation-icon {
+  font-size: 1.5rem;
+}
+
+.recommendation-content strong {
+  display: block;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.recommendation-content p {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+/* Loading State */
+.loading-state {
+  text-align: center;
+  padding: 2rem;
+  color: #9ca3af;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #1f2937;
+  border-top-color: #00f2fe;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Threat Colors */
+.threat-high {
+  color: #f87171 !important;
+}
+
+.threat-medium {
+  color: #fbbf24 !important;
+}
+
+.threat-low {
+  color: #34d399 !important;
+}
+/* Add to TablePages.css - Blockchain Styles */
+
+/* Blockchain Stats */
+.blockchain-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Blockchain Visualization */
+.blockchain-chain {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem 0.5rem;
+}
+
+.block-node {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.block-node-content {
+  background: #0f1722;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  min-width: 100px;
+  border: 2px solid #34d399;
+  transition: all 0.2s ease;
+}
+
+.block-node-content:hover {
+  transform: scale(1.05);
+}
+
+.block-node-content.valid {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.08);
+}
+
+.block-node-content.tampered {
+  border-color: #f87171;
+  background: rgba(248, 113, 113, 0.08);
+}
+
+.block-index {
+  display: block;
+  font-size: 0.65rem;
+  color: #9ca3af;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.block-hash-short {
+  display: block;
+  font-size: 0.55rem;
+  font-family: monospace;
+  color: #f3f4f6;
+  word-break: break-all;
+}
+
+.block-arrow {
+  color: #00f2fe;
+  font-size: 1.25rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Table Controls */
+.table-controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  background: #0f1722;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #00f2fe;
+}
+
+/* Hash Cell */
+.hash-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hash-text {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: #60a5fa;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  background: rgba(96, 165, 250, 0.05);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  word-break: break-all;
+  max-width: 150px;
+}
+
+.hash-text:hover {
+  background: rgba(96, 165, 250, 0.15);
+  color: #00f2fe;
+}
+
+.copy-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: #6b7280;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  color: #00f2fe;
+  background: rgba(0, 242, 254, 0.1);
+}
+
+/* Blockchain Footer */
+.blockchain-footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.info-box {
+  background: #111827;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #1f2937;
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  border-color: #00f2fe;
+  transform: translateY(-2px);
+}
+
+.info-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.info-text strong {
+  display: block;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  margin-bottom: 0.1rem;
+}
+
+.info-text p {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+/* Status Badge Extensions */
+.status-badge.success {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.status-badge.danger {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+/* Tampered Row */
+.tampered-row {
+  background: rgba(248, 113, 113, 0.03);
+}
+
+.tampered-row:hover td {
+  background: rgba(248, 113, 113, 0.08) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blockchain-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .blockchain-chain {
+    padding: 0.5rem 0;
+  }
+  
+  .block-node-content {
+    min-width: 70px;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .block-hash-short {
+    font-size: 0.5rem;
+  }
+  
+  .table-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .filter-select,
+  .search-input {
+    width: 100%;
+  }
+  
+  .blockchain-footer {
+    grid-template-columns: 1fr;
+  }
+  
+  .hash-text {
+    max-width: 80px;
+    font-size: 0.6rem;
+  }
+}
+/* Add to TablePages.css - Blockchain Styles */
+
+/* Blockchain Stats */
+.blockchain-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Blockchain Visualization */
+.blockchain-chain {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.block-node {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.block-node-content {
+  background: #0f1722;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  min-width: 100px;
+  border: 2px solid #34d399;
+  transition: all 0.2s ease;
+}
+
+.block-node-content:hover {
+  transform: scale(1.05);
+}
+
+.block-node-content.valid {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.08);
+}
+
+.block-node-content.tampered {
+  border-color: #f87171;
+  background: rgba(248, 113, 113, 0.08);
+}
+
+.block-index {
+  display: block;
+  font-size: 0.65rem;
+  color: #9ca3af;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.block-hash-short {
+  display: block;
+  font-size: 0.55rem;
+  font-family: monospace;
+  color: #f3f4f6;
+  word-break: break-all;
+}
+
+.block-arrow {
+  color: #00f2fe;
+  font-size: 1.25rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Table Controls */
+.table-controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  background: #0f1722;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #00f2fe;
+}
+
+/* Hash Cell - FIXED */
+.hash-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.hash-text {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: #60a5fa;
+  padding: 0.15rem 0.4rem;
+  background: rgba(96, 165, 250, 0.05);
+  border-radius: 4px;
+  word-break: break-all;
+  max-width: 120px;
+}
+
+/* Status Badge Extensions */
+.status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.status-badge.success {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.status-badge.danger {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+/* Tampered Row */
+.tampered-row {
+  background: rgba(248, 113, 113, 0.03);
+}
+
+.tampered-row:hover td {
+  background: rgba(248, 113, 113, 0.08) !important;
+}
+
+/* Blockchain Footer */
+.blockchain-footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.info-box {
+  background: #111827;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #1f2937;
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  border-color: #00f2fe;
+  transform: translateY(-2px);
+}
+
+.info-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.info-text strong {
+  display: block;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  margin-bottom: 0.1rem;
+}
+
+.info-text p {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+/* Fix time cell */
+.time-cell {
+  white-space: nowrap;
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blockchain-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .blockchain-chain {
+    padding: 0.5rem 0;
+  }
+  
+  .block-node-content {
+    min-width: 70px;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .block-hash-short {
+    font-size: 0.5rem;
+  }
+  
+  .table-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .filter-select,
+  .search-input {
+    width: 100%;
+  }
+  
+  .blockchain-footer {
+    grid-template-columns: 1fr;
+  }
+  
+  .hash-text {
+    max-width: 70px;
+    font-size: 0.6rem;
+  }
+  
+  .data-table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blockchain-stats {
+    grid-template-columns: 1fr;
+  }
+}

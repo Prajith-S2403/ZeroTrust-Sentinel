@@ -1,0 +1,942 @@
+/* UserPages.css - Complete Fixed Version */
+
+/* ============================================
+   USER CONTAINER
+   ============================================ */
+.user-container {
+  margin-left: 0;
+  padding: 2rem;
+  background: #0a0a0f;
+  min-height: 100vh;
+}
+
+.user-container h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #c084fc 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.user-subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   PAGE HEADER
+   ============================================ */
+.user-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.upload-btn {
+  background: linear-gradient(135deg, #c084fc 0%, #60a5fa 100%);
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.upload-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.3);
+}
+
+/* ============================================
+   STATS CARDS
+   ============================================ */
+.user-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.user-card {
+  background: #111827;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid #1f2937;
+  transition: all 0.3s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-3px);
+  border-color: #374151;
+  background: #1a2332;
+}
+
+.user-card h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.user-card p {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  color: #f3f4f6;
+}
+
+.user-card:nth-child(1) p { color: #60a5fa; }
+.user-card:nth-child(2) p { color: #34d399; }
+.user-card:nth-child(3) p { color: #c084fc; }
+
+/* ============================================
+   CONTROLS (Search + Buttons)
+   ============================================ */
+.user-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.search-wrapper {
+  flex: 1;
+  min-width: 250px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background: #0f1722;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #c084fc;
+  box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.1);
+}
+
+.search-input::placeholder {
+  color: #6b7280;
+}
+
+.controls-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.refresh-btn {
+  background: #1f2937;
+  border: 1px solid #374151;
+  color: #f3f4f6;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.refresh-btn:hover {
+  background: #374151;
+  border-color: #c084fc;
+}
+
+/* ============================================
+   TABLE CARD
+   ============================================ */
+.user-table-card {
+  background: #111827;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid #1f2937;
+}
+
+.user-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.user-table-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f3f4f6;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-table-card h3.files-icon::before {
+  content: '📁';
+}
+
+.user-table-card h3.shared-icon::before {
+  content: '👥';
+}
+
+/* ============================================
+   DATA TABLE
+   ============================================ */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.user-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.user-data-table thead th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: #0f1722;
+  color: #e5e7eb;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #1f2937;
+  white-space: nowrap;
+}
+
+.user-data-table tbody td {
+  padding: 0.75rem 1rem;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #1f2937;
+  vertical-align: middle;
+}
+
+.user-data-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.user-data-table tbody tr:hover td {
+  background: #1a2332;
+  color: #f3f4f6;
+}
+
+/* File Name with Icon */
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.file-icon {
+  font-size: 1.1rem;
+}
+
+.file-name {
+  color: #f3f4f6;
+  font-weight: 500;
+}
+
+/* ============================================
+   STATUS BADGES
+   ============================================ */
+.file-status {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.file-status.encrypted {
+  background: rgba(52, 211, 153, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+.file-status.pending {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+/* ============================================
+   FILE ACTIONS
+   ============================================ */
+.file-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.file-btn {
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.file-btn.download {
+  background: rgba(96, 165, 250, 0.12);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.25);
+}
+
+.file-btn.download:hover {
+  background: rgba(96, 165, 250, 0.25);
+  transform: translateY(-1px);
+}
+
+.file-btn.share {
+  background: rgba(192, 132, 252, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.25);
+}
+
+.file-btn.share:hover {
+  background: rgba(192, 132, 252, 0.25);
+  transform: translateY(-1px);
+}
+
+.file-btn.delete {
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+.file-btn.delete:hover {
+  background: rgba(248, 113, 113, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   QUICK ACTIONS
+   ============================================ */
+.quick-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.quick-action-btn {
+  padding: 0.75rem 1.5rem;
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quick-action-btn:hover {
+  background: #1a2332;
+  border-color: #c084fc;
+  transform: translateY(-2px);
+}
+
+.quick-action-btn.upload {
+  color: #34d399;
+}
+
+.quick-action-btn.upload:hover {
+  border-color: #34d399;
+}
+
+.quick-action-btn.share {
+  color: #c084fc;
+}
+
+.quick-action-btn.share:hover {
+  border-color: #c084fc;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+.user-empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.user-empty-state p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+.user-loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.user-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #1f2937;
+  border-top-color: #c084fc;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .user-container {
+    padding: 1.5rem;
+  }
+  
+  .user-container h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-container {
+    padding: 1rem;
+  }
+  
+  .user-container h1 {
+    font-size: 1.25rem;
+  }
+  
+  .user-card-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .user-card {
+    padding: 1rem;
+  }
+  
+  .user-card p {
+    font-size: 1.5rem;
+  }
+  
+  .user-card h3 {
+    font-size: 0.65rem;
+  }
+  
+  .user-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-wrapper {
+    min-width: auto;
+  }
+  
+  .controls-actions {
+    justify-content: stretch;
+  }
+  
+  .controls-actions button {
+    flex: 1;
+  }
+  
+  .user-table-card {
+    padding: 1rem;
+  }
+  
+  .user-data-table thead th,
+  .user-data-table tbody td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .file-actions {
+    flex-direction: column;
+  }
+  
+  .file-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .user-page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .header-actions {
+    width: 100%;
+  }
+  
+  .upload-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-card-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .user-container {
+    padding: 0.75rem;
+  }
+  
+  .user-container h1 {
+    font-size: 1.1rem;
+  }
+  
+  .user-data-table {
+    min-width: 500px;
+  }
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #0f1722;
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #c084fc;
+}
+/* ============================================
+   USER ACTIVITY PAGE STYLES
+   ============================================ */
+
+/* Activity Icon */
+.user-table-card h3.activity-icon::before {
+  content: '📋';
+  margin-right: 0.5rem;
+}
+
+/* Activity Time */
+.activity-time {
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+/* Action Badge */
+.action-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.action-badge.action-upload {
+  background: rgba(52, 211, 153, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+.action-badge.action-download {
+  background: rgba(96, 165, 250, 0.12);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.25);
+}
+
+.action-badge.action-share {
+  background: rgba(192, 132, 252, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.25);
+}
+
+.action-badge.action-delete {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+.action-badge.action-unauthorized {
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+/* Filter Select */
+.filter-select {
+  padding: 0.5rem 1rem;
+  background: #0f1722;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  cursor: pointer;
+  min-width: 150px;
+  transition: all 0.2s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #c084fc;
+  box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.1);
+}
+
+.filter-select option {
+  background: #0f1722;
+  color: #f3f4f6;
+}
+
+/* Activity Footer */
+.activity-footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.activity-footer .footer-info {
+  background: #111827;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #1f2937;
+  transition: all 0.3s ease;
+}
+
+.activity-footer .footer-info:hover {
+  border-color: #c084fc;
+  transform: translateY(-2px);
+}
+
+.activity-footer .footer-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.activity-footer .footer-text strong {
+  display: block;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  margin-bottom: 0.1rem;
+}
+
+.activity-footer .footer-text p {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+/* File Info in Activity */
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.file-info .file-icon {
+  font-size: 1rem;
+}
+
+.file-info .file-name {
+  color: #f3f4f6;
+  font-weight: 500;
+}
+
+/* ============================================
+   RESPONSIVE FOR ACTIVITY PAGE
+   ============================================ */
+@media (max-width: 768px) {
+  .activity-footer {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-select {
+    min-width: 100%;
+    width: 100%;
+  }
+  
+  .user-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .controls-actions {
+    flex-direction: column;
+  }
+  
+  .controls-actions .filter-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .action-badge {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.4rem;
+  }
+  
+  .activity-time {
+    font-size: 0.65rem;
+  }
+  
+  .file-info .file-name {
+    font-size: 0.75rem;
+  }
+}/* Upload Main Container */
+.upload-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Upload Card */
+.upload-card {
+  background: #111827;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #1f2937;
+  margin-bottom: 2rem;
+}
+
+/* Upload Dropzone */
+.upload-dropzone {
+  border: 2px dashed #1f2937;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-dropzone:hover {
+  border-color: #374151;
+  background: #1a2332;
+}
+
+.upload-dropzone.drag-over {
+  border-color: #c084fc;
+  background: rgba(192, 132, 252, 0.05);
+  transform: scale(1.01);
+}
+
+.upload-dropzone.has-file {
+  border-color: #34d399;
+  border-style: solid;
+  background: rgba(52, 211, 153, 0.05);
+}
+
+/* Dropzone Content */
+.dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropzone-icon {
+  font-size: 4rem;
+}
+
+.dropzone-title {
+  color: #f3f4f6;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0;
+}
+
+.dropzone-hint {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.dropzone-formats {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dropzone-formats span {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  background: #0f1722;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  color: #9ca3af;
+}
+
+/* Selected File Info */
+.selected-file-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background: #0f1722;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+}
+
+.selected-file-icon {
+  font-size: 2.5rem;
+}
+
+.selected-file-details {
+  flex: 1;
+  text-align: left;
+}
+
+.selected-file-details .file-name {
+  display: block;
+  color: #f3f4f6;
+  font-weight: 600;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.selected-file-details .file-meta {
+  display: block;
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+}
+
+.file-status-badge {
+  display: inline-block;
+  margin-top: 0.3rem;
+  padding: 0.15rem 0.6rem;
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border-radius: 12px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.remove-file-btn {
+  background: rgba(248, 113, 113, 0.15);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #f87171;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.remove-file-btn:hover {
+  background: rgba(248, 113, 113, 0.25);
+  transform: rotate(90deg);
+}
+
+/* Upload Actions */
+.upload-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.browse-btn-secondary {
+  padding: 0.625rem 1.25rem;
+  background: #0f1722;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.browse-btn-secondary:hover {
+  background: #1a2332;
+  border-color: #374151;
+  color: #f3f4f6;
+}
+
+.upload-submit-btn {
+  flex: 1;
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(135deg, #c084fc 0%, #60a5fa 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 200px;
+}
+
+.upload-submit-btn:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.3);
+}
+
+.upload-submit-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,267 @@
+/* Threats.css - Dark Mode */
+
+/* Page Container */
+.page-container {
+  margin-left: 280px;
+  padding: 2rem;
+  background: #0a0a0f;
+  min-height: 100vh;
+  animation: fadeIn 0.5s ease-in-out;
+  overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page Title */
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #c084fc 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+/* Threat Grid */
+.threat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Threat Cards */
+.threat-card {
+  background: #111827;
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+}
+
+.threat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #c084fc, #60a5fa);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.threat-card:hover {
+  transform: translateY(-2px);
+  background: #1a2332;
+  border-color: #374151;
+}
+
+.threat-card:hover::before {
+  opacity: 1;
+}
+
+.threat-card h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.threat-card p {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  color: #f3f4f6;
+}
+
+/* Threat Level Colors */
+.threat-high {
+  color: #f87171 !important;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.threat-low {
+  color: #34d399 !important;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Table Card */
+.table-card {
+  background: #111827;
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid #1f2937;
+  margin-top: 1rem;
+}
+
+.table-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #f3f4f6;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.table-card h3::before {
+  content: '⚠️';
+  font-size: 1.125rem;
+}
+
+/* Data Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table thead th {
+  text-align: left;
+  padding: 0.75rem;
+  background: #0f1722;
+  color: #e5e7eb;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #1f2937;
+}
+
+.data-table tbody td {
+  padding: 0.75rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+.data-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.data-table tbody tr:hover td {
+  background: #1a2332;
+  color: #f3f4f6;
+}
+
+/* Action column styling for threats */
+.data-table tbody tr td:nth-child(3) {
+  font-weight: 600;
+}
+
+/* Different colors for different threat actions */
+.data-table tbody tr td:nth-child(3):contains("UNAUTHORIZED_DOWNLOAD_ATTEMPT") {
+  color: #f87171;
+}
+
+.data-table tbody tr td:nth-child(3):contains("FILE_DELETED") {
+  color: #fbbf24;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .page-container {
+    margin-left: 280px;
+    padding: 1.5rem;
+  }
+  
+  .threat-grid {
+    gap: 1rem;
+  }
+  
+  .page-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .threat-card p {
+    font-size: 1.5rem;
+  }
+  
+  .threat-card h3 {
+    font-size: 0.65rem;
+  }
+  
+  .data-table thead th,
+  .data-table tbody td {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .table-card {
+    overflow-x: auto;
+  }
+  
+  .data-table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .threat-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-title {
+    font-size: 1.1rem;
+  }
+  
+  .threat-card p {
+    font-size: 1.25rem;
+  }
+}
+
+/* Scrollbar Styling */
+.table-card::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.table-card::-webkit-scrollbar-track {
+  background: #0f1722;
+  border-radius: 10px;
+}
+
+.table-card::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 10px;
+}
+
+.table-card::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Empty State */
+.data-table tbody tr td[colspan] {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-style: italic;
+}

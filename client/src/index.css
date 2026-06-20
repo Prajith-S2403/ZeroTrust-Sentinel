@@ -1,0 +1,17 @@
+/* Global Reset and Dark Theme Default */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0e1a; /* Enforce dark background globally */
+  color: #f3f4f6;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
