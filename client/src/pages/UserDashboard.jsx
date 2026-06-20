@@ -104,7 +104,7 @@ function UserDashboard() {
     try {
       const token = localStorage.getItem("token");
 
-      await API.delete(`/api/files/${id}`, {
+      await API.delete(`/api/files/delete/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
