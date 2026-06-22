@@ -178,11 +178,10 @@ function UserDashboard() {
             <div className="user-table-header">
               <h3 className="files-icon">My Files</h3>
               <span style={{ color: "#6b7280", fontSize: "0.875rem" }}>
-                {myFiles.length} files (Scroll horizontally to see actions)
+                {myFiles.length} files
               </span>
             </div>
 
-            <div className="table-responsive">
             <table className="user-data-table">
               <thead>
                 <tr>
@@ -233,7 +232,6 @@ function UserDashboard() {
                 ))}
               </tbody>
             </table>
-            </div>
           </div>
         )}
 
@@ -243,11 +241,10 @@ function UserDashboard() {
             <div className="user-table-header">
               <h3 className="shared-icon">Shared With Me</h3>
               <span style={{ color: "#6b7280", fontSize: "0.875rem" }}>
-                {sharedFiles.length} files (Scroll horizontally to see actions)
+                {sharedFiles.length} files
               </span>
             </div>
 
-            <div className="table-responsive">
             <table className="user-data-table">
               <thead>
                 <tr>
@@ -280,7 +277,6 @@ function UserDashboard() {
                 ))}
               </tbody>
             </table>
-            </div>
           </div>
         )}
 
