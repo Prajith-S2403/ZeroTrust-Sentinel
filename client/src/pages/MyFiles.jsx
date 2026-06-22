@@ -285,7 +285,7 @@ function MyFiles() {
               type="file"
               ref={fileInputRef}
               onChange={handleFileUpload}
-              style={{ display: "none" }}
+              style={{ position: "absolute", width: "1px", height: "1px", padding: 0, margin: "-1px", overflow: "hidden", clip: "rect(0, 0, 0, 0)", whiteSpace: "nowrap", border: 0 }}
               disabled={uploading}
             />
 
@@ -350,9 +350,9 @@ function MyFiles() {
 
         <div className="user-table-card">
           <div className="user-table-header">
-            <h3 className="files-icon">File Manager</h3>
+            <h3 className="files-icon">All Files</h3>
             <span style={{ color: "#6b7280", fontSize: "0.875rem" }}>
-              {filteredFiles.length} files
+              {filteredFiles.length} files (Scroll horizontally to see actions)
             </span>
           </div>
 
