@@ -47,9 +47,11 @@ app.use(express.json());
 app.use(helmet());
 
 const loginLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 5,
-  message: "Too many login attempts. Try again later.",
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 20,                   // 20 attempts per window (was 5 — too strict)
+  message: { message: "Too many login attempts. Please wait 15 minutes and try again." },
+  standardHeaders: true,     // sends RateLimit headers so client knows when to retry
+  legacyHeaders: false,
 });
 
 if (!process.env.MONGO_URI) {
