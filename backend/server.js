@@ -71,16 +71,12 @@ app.get("/", (req, res) => {
   res.send("Hello from ZeroTrust Share API!");
 });
 
-// Register
+// Register — flattened middleware for Express 5 compatibility
 app.post(
   "/register",
-  [
-    body("name").notEmpty().withMessage("Name is required"),
-    body("email").isEmail().withMessage("Valid email is required"),
-    body("password")
-      .isLength({ min: 6 })
-      .withMessage("Password must be at least 6 characters"),
-  ],
+  body("name").notEmpty().withMessage("Name is required"),
+  body("email").isEmail().withMessage("Valid email is required"),
+  body("password").isLength({ min: 6 }).withMessage("Password must be at least 6 characters"),
   validate,
   async (req, res) => {
     try {
@@ -91,38 +87,24 @@ app.post(
       const existingUser = await User.findOne({ email });
 
       if (existingUser) {
-        return res.status(400).json({
-          message: "User already exists",
-        });
+        return res.status(400).json({ message: "User already exists" });
       }
 
-      const user = await User.create({
-        name,
-        email,
-        password,
-      });
+      const user = await User.create({ name, email, password });
 
-      res.status(201).json({
-        message: "User registered successfully",
-        user,
-      });
+      res.status(201).json({ message: "User registered successfully", user });
     } catch (error) {
-      res.status(500).json({
-        message: "Registration failed",
-        error: error.message,
-      });
+      res.status(500).json({ message: "Registration failed", error: error.message });
     }
   }
 );
 
-// Login
+// Login — flattened middleware for Express 5 compatibility
 app.post(
   "/login",
   loginLimiter,
-  [
-    body("email").isEmail().withMessage("Valid email is required"),
-    body("password").notEmpty().withMessage("Password is required"),
-  ],
+  body("email").isEmail().withMessage("Valid email is required"),
+  body("password").notEmpty().withMessage("Password is required"),
   validate,
   async (req, res) => {
     try {
