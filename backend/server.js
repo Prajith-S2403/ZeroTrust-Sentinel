@@ -23,6 +23,7 @@ const validate = require("./middleware/validationMiddleware");
 const fileRoutes = require("./routes/fileRoutes");
 
 const app = express();
+app.set("trust proxy", 1); // Trust Render's reverse proxy for correct IP detection
 const SECRET_KEY = process.env.JWT_SECRET || "zerotrustsecret123";
 
 // Allow requests from configured frontend URLs (supports comma-separated list)
