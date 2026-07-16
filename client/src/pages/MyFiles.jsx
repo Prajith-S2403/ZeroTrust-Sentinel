@@ -82,17 +82,33 @@ function MyFiles() {
         responseType: "blob",
       });
 
-      const url = window.URL.createObjectURL(new Blob([res.data]));
-      const link = document.createElement("a");
-      link.href = url;
-      link.setAttribute("download", name);
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      window.URL.revokeObjectURL(url);
+      const blob = new Blob([res.data]);
+      const url = window.URL.createObjectURL(blob);
+
+      // iOS Safari fix: open in new tab instead of programmatic click
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      if (isIOS) {
+        window.open(url, "_blank");
+        setTimeout(() => window.URL.revokeObjectURL(url), 3000);
+      } else {
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", name);
+        link.style.display = "none";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => window.URL.revokeObjectURL(url), 1000);
+      }
     } catch (error) {
       console.error("Download failed", error);
-      alert("Failed to download file");
+      if (error.response?.status === 404) {
+        alert("⚠️ File not found on server. It may have been removed during a server restart.");
+      } else if (error.response?.status === 403) {
+        alert("❌ You don't have download permission for this file.");
+      } else {
+        alert("Failed to download file. Please try again.");
+      }
     }
   };
 

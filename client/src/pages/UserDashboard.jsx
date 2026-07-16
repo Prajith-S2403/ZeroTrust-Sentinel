@@ -43,23 +43,33 @@ function UserDashboard() {
   const downloadFile = async (id, name) => {
     try {
       const token = localStorage.getItem("token");
-
       const res = await API.get(`/api/files/download/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
         responseType: "blob",
       });
-
-      const url = window.URL.createObjectURL(new Blob([res.data]));
-      const link = document.createElement("a");
-      link.href = url;
-      link.setAttribute("download", name);
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      window.URL.revokeObjectURL(url);
+      const blob = new Blob([res.data]);
+      const url = window.URL.createObjectURL(blob);
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      if (isIOS) {
+        window.open(url, "_blank");
+        setTimeout(() => window.URL.revokeObjectURL(url), 3000);
+      } else {
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", name);
+        link.style.display = "none";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => window.URL.revokeObjectURL(url), 1000);
+      }
     } catch (error) {
       console.error("Download failed", error);
-      alert("Failed to download file");
+      if (error.response?.status === 404) {
+        alert("⚠️ File not found on server. It may have been removed during a server restart.");
+      } else {
+        alert("Failed to download file");
+      }
     }
   };
 
